@@ -37,7 +37,8 @@ esp-idf v4.2-dev-2243 or later.
 
 # Hardware requirements
 
-ST7565 Graphic LCD Module with SPI interface.
+ST7565 Graphic LCD Module with SPI interface.   
+I bought it on AliExpress.   
 
 ![st7565-1](https://user-images.githubusercontent.com/6020549/93008469-febb6f80-f5af-11ea-991e-e9d38df74b16.JPG)
 
@@ -47,22 +48,22 @@ ST7565 Graphic LCD Module with SPI interface.
 
 |ST7565||ESP32|
 |:-:|:-:|:-:|
-|1 DB0|--|N/C|
-|2 DB1|--|N/C|
-|3 DB2|--|N/C|
-|4 DB3|--|N/C|
-|5 DB4|--|N/C|
-|6 DB5|--|N/C|
-|7 SCL|--|GPIO18|
-|8 SDI|--|GPIO23|
-|9 VDD|--|3.3V|
-|10 VSS|--|GND|
-|11 LEDA|--|GPIO32(*)|
-|12 /CS|--|GPIO5(*)|
-|13 /RES|--|GPIO33(*)|
-|14 A0|--|GPIO27(*)|
-|15 /WR|--|N/C|
-|16 /RD|--|N/C|
+|DB0|--|N/C|
+|DB1|--|N/C|
+|DB2|--|N/C|
+|DB3|--|N/C|
+|DB4|--|N/C|
+|DB5|--|N/C|
+|SCL|--|GPIO18|
+|SDI|--|GPIO23|
+|VDD|--|3.3V|
+|VSS|--|GND|
+|LEDA|--|GPIO32(*)|
+|/CS|--|GPIO5(*)|
+|/RES|--|GPIO33(*)|
+|A0|--|GPIO27(*)|
+|/WR|--|N/C|
+|/RD|--|N/C|
 
 (*) You can change any GPIO using menuconfig.   
 
