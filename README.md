@@ -37,6 +37,8 @@ esp-idf v4.2-dev-2243 or later.
 
 # Hardware requirements
 
+ST7565 Graphic LCD Module with SPI interface.
+
 ![st7565-1](https://user-images.githubusercontent.com/6020549/93008469-febb6f80-f5af-11ea-991e-e9d38df74b16.JPG)
 
 ---
@@ -55,12 +57,14 @@ esp-idf v4.2-dev-2243 or later.
 |8 SDI|--|GPIO23|
 |9 VDD|--|3.3V|
 |10 VSS|--|GND|
-|11 LEDA|--|GPIO32|
-|12 /CS|--|GPIO5|
-|13 /RES|--|GPIO33|
-|14 A0|--|GPIO27|
+|11 LEDA|--|GPIO32(*)|
+|12 /CS|--|GPIO5(*)|
+|13 /RES|--|GPIO33(*)|
+|14 A0|--|GPIO27(*)|
 |15 /WR|--|N/C|
 |16 /RD|--|N/C|
+
+(*) You can change any GPIO using menuconfig.   
 
 ---
 
@@ -77,11 +81,11 @@ esp-idf v4.2-dev-2243 or later.
 # Font File   
 I am using this font.
 
-- 8x6 font
+- 8x6 font   
 https://github.com/Defragster/ssd1306xled/blob/master/font6x8.h
 
-- 8x8 font
+- 8x8 font   
 https://opengameart.org/content/8x8-ascii-bitmap-font-with-c-source
 
-- 8x8 bold font
+- 8x8 bold font   
 https://github.com/dhepper/font8x8/blob/master/font8x8_basic.h
