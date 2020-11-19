@@ -3,7 +3,7 @@ ST7565 Driver for esp-idf
 
 ![st7565-11](https://user-images.githubusercontent.com/6020549/93008588-62926800-f5b1-11ea-8752-fa042139acdc.JPG)
 
-# Install
+# Installation
 
 ```
 git clone https://github.com/nopnop2002/esp-idf-st7565
