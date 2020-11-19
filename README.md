@@ -3,6 +3,15 @@ ST7565 Driver for esp-idf
 
 ![st7565-11](https://user-images.githubusercontent.com/6020549/93008588-62926800-f5b1-11ea-8752-fa042139acdc.JPG)
 
+# Install
+
+```
+git clone https://github.com/nopnop2002/esp-idf-st7565
+cd esp-idf-st7565/
+make menuconfig
+make flash
+```
+
 You have to set this config value with menuconfig.   
 - CONFIG_WIDTH   
 - CONFIG_HEIGHT   
@@ -14,14 +23,6 @@ You have to set this config value with menuconfig.
 - CONFIG_BL_GPIO   
 - CONFIG_ROTATION   
 - CONFIG_INVERSION   
-
-
-```
-git clone https://github.com/nopnop2002/esp-idf-st7565
-cd esp-idf-st7565/
-make menuconfig
-make flash
-```
 
 ![config-1](https://user-images.githubusercontent.com/6020549/93008473-07ac4100-f5b0-11ea-940c-4bd7416f1ebf.jpg)
 
