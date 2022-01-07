@@ -12,6 +12,7 @@ This is because this version supports ESP32-C3.
 
 ST7565 Graphic LCD Module with SPI interface.   
 I bought it on AliExpress.   
+The chip resistor behind it allows you to change the interface to parallel and SPI.   
 
 ![st7565-1](https://user-images.githubusercontent.com/6020549/93008469-febb6f80-f5af-11ea-991e-e9d38df74b16.JPG)
 
@@ -78,8 +79,8 @@ You have to set this config value with menuconfig.
 |DB3|--|N/C|N/C|N/C|
 |DB4|--|N/C|N/C|N/C|
 |DB5|--|N/C|N/C|N/C|
-|SCL|--|GPIO18(*)|GPIO36(*)|GPIO1(*)|
-|SDI|--|GPIO23(*)|GPIO35(*)|GPIO0(*)|
+|DB6(=SCLKL)|--|GPIO18(*)|GPIO36(*)|GPIO1(*)|
+|DB7(=MOSI)|--|GPIO23(*)|GPIO35(*)|GPIO0(*)|
 |VDD|--|3.3V|3.3V|3.3V|
 |VSS|--|GND|GND|GND|
 |LEDA|--|GPIO32(*)|GPIO33(*)|GPIO4(*)|
@@ -88,6 +89,9 @@ You have to set this config value with menuconfig.
 |A0|--|GPIO27(*)|GPIO37(*)|GPIO2(*)|
 |/WR|--|N/C|N/C|N/C|
 |/RD|--|N/C|N/C|N/C|
+
+For SPI interfaces, DB6 is the SPI CLOCK.   
+For SPI interfaces, DB7 is the SPI MOSI.   
 
 (*) You can change any GPIO using menuconfig.   
 
