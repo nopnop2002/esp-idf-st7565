@@ -79,7 +79,7 @@ You have to set this config value with menuconfig.
 |DB3|--|N/C|N/C|N/C|
 |DB4|--|N/C|N/C|N/C|
 |DB5|--|N/C|N/C|N/C|
-|DB6(=SCLKL)|--|GPIO18(*)|GPIO36(*)|GPIO1(*)|
+|DB6(=SCLK)|--|GPIO18(*)|GPIO36(*)|GPIO1(*)|
 |DB7(=MOSI)|--|GPIO23(*)|GPIO35(*)|GPIO0(*)|
 |VDD|--|3.3V|3.3V|3.3V|
 |VSS|--|GND|GND|GND|
