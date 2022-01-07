@@ -3,15 +3,55 @@ ST7565 Driver for esp-idf
 
 ![st7565-11](https://user-images.githubusercontent.com/6020549/93008588-62926800-f5b1-11ea-8752-fa042139acdc.JPG)
 
-# Installation
+# Software requirements
+esp-idf v4.4 or later.   
+This is because this version supports ESP32-C3.   
+
+
+# Hardware requirements
+
+ST7565 Graphic LCD Module with SPI interface.   
+I bought it on AliExpress.   
+
+![st7565-1](https://user-images.githubusercontent.com/6020549/93008469-febb6f80-f5af-11ea-991e-e9d38df74b16.JPG)
+
+
+# Installation for ESP32
 
 ```
 git clone https://github.com/nopnop2002/esp-idf-st7565
 cd esp-idf-st7565/
-make menuconfig
-make flash
+idf.py set-target esp32
+idf.py menuconfig
+idf.py flash
 ```
 
+# Installation for ESP32-S2
+
+```
+git clone https://github.com/nopnop2002/esp-idf-st7565
+cd esp-idf-st7565/
+idf.py set-target esp32s2
+idf.py menuconfig
+idf.py flash
+```
+
+# Installation for ESP32-C3
+
+```
+git clone https://github.com/nopnop2002/esp-idf-st7565
+cd esp-idf-st7565/
+idf.py set-target esp32c3
+idf.py menuconfig
+idf.py flash
+```
+
+__Note__   
+For some reason, there are development boards that cannot use GPIO06, GPIO08, GPIO09, GPIO19 for SPI clock pins.   
+According to the ESP32C3 specifications, these pins can also be used as SPI clocks.   
+I used a raw ESP-C3-13 to verify that these pins could be used as SPI clocks.   
+
+# Configuration   
 You have to set this config value with menuconfig.   
 - CONFIG_WIDTH   
 - CONFIG_HEIGHT   
@@ -28,47 +68,29 @@ You have to set this config value with menuconfig.
 
 ![config-2](https://user-images.githubusercontent.com/6020549/93008474-0aa73180-f5b0-11ea-9a5d-0ae4867a4fc4.jpg)
 
----
-
-# Software requirements
-
-esp-idf v4.2-dev-2243 or later.
-
----
-
-# Hardware requirements
-
-ST7565 Graphic LCD Module with SPI interface.   
-I bought it on AliExpress.   
-
-![st7565-1](https://user-images.githubusercontent.com/6020549/93008469-febb6f80-f5af-11ea-991e-e9d38df74b16.JPG)
-
----
-
 # Wireing  
 
-|ST7565||ESP32|
-|:-:|:-:|:-:|
-|DB0|--|N/C|
-|DB1|--|N/C|
-|DB2|--|N/C|
-|DB3|--|N/C|
-|DB4|--|N/C|
-|DB5|--|N/C|
-|SCL|--|GPIO18|
-|SDI|--|GPIO23|
-|VDD|--|3.3V|
-|VSS|--|GND|
-|LEDA|--|GPIO32(*)|
-|/CS|--|GPIO5(*)|
-|/RES|--|GPIO33(*)|
-|A0|--|GPIO27(*)|
-|/WR|--|N/C|
-|/RD|--|N/C|
+|ST7565||ESP32|ESP32S2|ESP32C3|
+|:-:|:-:|:-:|:-:|:-:|
+|DB0|--|N/C|N/C|N/C|
+|DB1|--|N/C|N/C|N/C|
+|DB2|--|N/C|N/C|N/C|
+|DB3|--|N/C|N/C|N/C|
+|DB4|--|N/C|N/C|N/C|
+|DB5|--|N/C|N/C|N/C|
+|SCL|--|GPIO18(*)|GPIO36(*)|GPIO1(*)|
+|SDI|--|GPIO23(*)|GPIO35(*)|GPIO0(*)|
+|VDD|--|3.3V|3.3V|3.3V|
+|VSS|--|GND|GND|GND|
+|LEDA|--|GPIO32(*)|GPIO33(*)|GPIO4(*)|
+|/CS|--|GPIO5(*)|GPIO34(*)|GPIO5(*)|
+|/RES|--|GPIO33(*)|GPIO38(*)|GPIO3(*)|
+|A0|--|GPIO27(*)|GPIO37(*)|GPIO2(*)|
+|/WR|--|N/C|N/C|N/C|
+|/RD|--|N/C|N/C|N/C|
 
 (*) You can change any GPIO using menuconfig.   
 
----
 
 ![st7565-12](https://user-images.githubusercontent.com/6020549/93008589-63c39500-f5b1-11ea-8721-c6b276d3ceba.JPG)
 ![st7565-13](https://user-images.githubusercontent.com/6020549/93008590-64f4c200-f5b1-11ea-8948-9b56ec54bcec.JPG)
@@ -78,7 +100,6 @@ I bought it on AliExpress.
 ![st7565-17](https://user-images.githubusercontent.com/6020549/93008595-67571c00-f5b1-11ea-93d7-0ca3b264ed9c.JPG)
 ![st7565-18](https://user-images.githubusercontent.com/6020549/93008597-67efb280-f5b1-11ea-9e0e-256bd5204bcd.JPG)
 
----
 
 # Font File   
 I am using this font.
