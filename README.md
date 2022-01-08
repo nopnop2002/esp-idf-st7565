@@ -63,7 +63,7 @@ You have to set this config value with menuconfig.
 - CONFIG_DC_GPIO   
 - CONFIG_RESET_GPIO   
 - CONFIG_BL_GPIO   
-- CONFIG_ROTATION   
+- CONFIG_FLIP   
 - CONFIG_INVERSION   
 
 ![config-1](https://user-images.githubusercontent.com/6020549/93008473-07ac4100-f5b0-11ea-940c-4bd7416f1ebf.jpg)
