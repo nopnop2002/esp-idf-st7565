@@ -736,8 +736,8 @@ void lcdBacklightOn(TFT_t * dev) {
 	}
 }
 
-// Display Rotation ON
-void lcdRotationOn(TFT_t * dev) {
+// Display Flip upside down
+void lcdFlipOn(TFT_t * dev) {
 	spi_master_write_command(dev, 0xa1); // set SEG direction (A1 to flip horizontal)
 	spi_master_write_command(dev, 0xc0); // set COM direction (C0 to flip vert)
 	dev->_flip = 1;

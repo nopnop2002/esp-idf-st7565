@@ -57,7 +57,7 @@ int lcdDrawString2(TFT_t * dev, uint8_t * font, uint16_t x, uint16_t y, uint8_t 
 void lcdSetFontDirection(TFT_t * dev, uint16_t);
 void lcdBacklightOff(TFT_t * dev);
 void lcdBacklightOn(TFT_t * dev);
-void lcdRotationOn(TFT_t * dev);
+void lcdFlipOn(TFT_t * dev);
 void lcdInversionOn(TFT_t * dev);
 void lcdSetFontRevert(TFT_t * dev);
 void lcdUnsetFontRevert(TFT_t * dev);

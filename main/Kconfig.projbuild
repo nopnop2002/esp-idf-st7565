@@ -1,11 +1,11 @@
 menu "ST7565 Configuration"
 
-  config GPIO_RANGE_MAX
-    int
-    default 33 if IDF_TARGET_ESP32
-    default 46 if IDF_TARGET_ESP32S2
-    default 19 if IDF_TARGET_ESP32C3
-    default 48 if IDF_TARGET_ESP32S3
+	config GPIO_RANGE_MAX
+		int
+		default 33 if IDF_TARGET_ESP32
+		default 46 if IDF_TARGET_ESP32S2
+		default 19 if IDF_TARGET_ESP32C3
+		default 48 if IDF_TARGET_ESP32S3
 
 	config WIDTH
 		int "SCREEN WIDTH"
@@ -89,11 +89,11 @@ menu "ST7565 Configuration"
 			Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to Reset.
 			GPIOs 35-39 are input-only so cannot be used as outputs.
 
-	config ROTATION
-		bool "Enable Display Rotate"
+	config FLIP
+		bool "Flip upside down"
 		default false
 		help
-			Enable Display Rotate.
+			Flip upside down.
 
 	config INVERSION
 		bool "Enable Display Inversion"

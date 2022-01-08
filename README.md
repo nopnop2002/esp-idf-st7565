@@ -2,6 +2,7 @@
 ST7565 Driver for esp-idf
 
 ![st7565-11](https://user-images.githubusercontent.com/6020549/93008588-62926800-f5b1-11ea-8752-fa042139acdc.JPG)
+![st7565-19](https://user-images.githubusercontent.com/6020549/148663141-e12245a4-655c-47c5-9254-ceaaba13286c.JPG)
 
 # Software requirements
 esp-idf v4.4 or later.   
@@ -67,7 +68,7 @@ You have to set this config value with menuconfig.
 
 ![config-1](https://user-images.githubusercontent.com/6020549/93008473-07ac4100-f5b0-11ea-940c-4bd7416f1ebf.jpg)
 
-![config-2](https://user-images.githubusercontent.com/6020549/93008474-0aa73180-f5b0-11ea-9a5d-0ae4867a4fc4.jpg)
+![config-2](https://user-images.githubusercontent.com/6020549/148663125-94faec59-7e82-46d9-977c-124310dd2e18.jpg)
 
 # Wireing  
 
