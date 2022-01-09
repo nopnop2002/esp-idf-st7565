@@ -470,9 +470,10 @@ TickType_t BMPTest(TFT_t * dev, char * file, int width, int height) {
 			} // end col
 			//lcdDrawMultiPixels(dev, _x, row+_y, _w, colors);
 			lcdDrawMultiPixels(dev, _x, _y, _w, colors);
-			lcdWriteBuffer(dev);
+			//lcdWriteBuffer(dev);
 			_y++;
 		} // end row
+		lcdWriteBuffer(dev);
 		free(colors);
 	} else {
 		ESP_LOGW(__FUNCTION__, "Illegal BMP format");
