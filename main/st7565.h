@@ -26,7 +26,7 @@ typedef struct {
 	int16_t _flip;
 	int16_t _invert;
 	int16_t _blen;
-	uint8_t _buffer[128*64/8];
+	uint8_t *_buffer;
 	spi_device_handle_t _SPIHandle;
 } TFT_t;
 

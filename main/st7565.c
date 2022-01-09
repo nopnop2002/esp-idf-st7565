@@ -104,7 +104,7 @@ void spi_master_init(TFT_t * dev, int16_t GPIO_MOSI, int16_t GPIO_SCLK, int16_t 
 	assert(ret==ESP_OK);
 	dev->_dc = GPIO_DC;
 	dev->_bl = GPIO_BL;
-	dev->_blen = 1024;
+	//dev->_blen = 1024;
 	dev->_SPIHandle = handle;
 }
 
@@ -169,6 +169,11 @@ void lcdInit(TFT_t * dev, int width, int height)
 	dev->_font_revert = 0;
 	dev->_flip = 0;
 	dev->_invert = 0;
+
+	dev->_blen = width * height / 8;
+	ESP_LOGD(TAG, "dev->_blen=%d", dev->_blen);
+	uint8_t *buffer = (uint8_t*)malloc(dev->_blen);
+	dev->_buffer = buffer;
 
 	spi_master_write_command(dev, 0xe2); // system reset
 	spi_master_write_command(dev, 0x40); // set LCD start line to 0
