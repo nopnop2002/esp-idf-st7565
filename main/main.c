@@ -16,8 +16,8 @@
 #include "font8x8.h"
 #include "font8x8_bold.h"
 
-#define	INTERVAL		400
-#define WAIT	vTaskDelay(INTERVAL)
+#define	INTERVAL 400
+#define WAIT vTaskDelay(INTERVAL)
 
 static const char *TAG = "ST7565";
 
@@ -57,7 +57,7 @@ TickType_t FillTest(TFT_t * dev, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_RATE_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -93,7 +93,7 @@ TickType_t BarTest(TFT_t * dev, int direction, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_RATE_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -150,7 +150,7 @@ TickType_t ArrowTest(TFT_t * dev, uint8_t * font, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_RATE_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -183,7 +183,7 @@ TickType_t DirectionTest(TFT_t * dev, uint8_t * font, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_RATE_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -204,7 +204,7 @@ TickType_t LineTest(TFT_t * dev, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_RATE_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -222,7 +222,7 @@ TickType_t CircleTest(TFT_t * dev, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_RATE_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -258,7 +258,7 @@ TickType_t RectAngleTest(TFT_t * dev, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_RATE_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -294,7 +294,7 @@ TickType_t TriangleTest(TFT_t * dev, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_RATE_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -314,7 +314,7 @@ TickType_t RoundRectTest(TFT_t * dev, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_RATE_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -483,7 +483,7 @@ TickType_t BMPTest(TFT_t * dev, char * file, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_RATE_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 

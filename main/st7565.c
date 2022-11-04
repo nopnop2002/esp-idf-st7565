@@ -17,12 +17,9 @@
 
 #ifdef CONFIG_IDF_TARGET_ESP32
 #define LCD_HOST    HSPI_HOST
-#elif defined CONFIG_IDF_TARGET_ESP32S2
-#define LCD_HOST    SPI2_HOST
-#elif defined CONFIG_IDF_TARGET_ESP32C3
+#else
 #define LCD_HOST    SPI2_HOST
 #endif
-
 
 static const int SPI_Command_Mode = 0;
 static const int SPI_Data_Mode = 1;
