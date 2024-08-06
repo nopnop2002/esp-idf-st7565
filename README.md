@@ -13,7 +13,7 @@ ESP-IDF V5.1 is required when using ESP32-C6.
 
 ST7565 Graphic LCD Module with SPI interface.   
 I bought it on AliExpress.   
-The chip resistor on the back allows you to change the interface to parallel and SPI, but for this project we will use SPI.
+You can change the interface to Parallel and SPI by changing the chip resistor on the back, but for this project we will use SPI.   
 
 ![st7565-1](https://user-images.githubusercontent.com/6020549/93008469-febb6f80-f5af-11ea-991e-e9d38df74b16.JPG)
 
