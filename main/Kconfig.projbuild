@@ -4,8 +4,10 @@ menu "ST7565 Configuration"
 		int
 		default 33 if IDF_TARGET_ESP32
 		default 46 if IDF_TARGET_ESP32S2
-		default 19 if IDF_TARGET_ESP32C3
 		default 48 if IDF_TARGET_ESP32S3
+		default 18 if IDF_TARGET_ESP32C2
+		default 19 if IDF_TARGET_ESP32C3
+		default 30 if IDF_TARGET_ESP32C6
 
 	config WIDTH
 		int "SCREEN WIDTH"
@@ -25,9 +27,8 @@ menu "ST7565 Configuration"
 		int "MOSI GPIO number"
 		range 0 GPIO_RANGE_MAX
 		default 23 if IDF_TARGET_ESP32
-		default 35 if IDF_TARGET_ESP32S2
-		default 35 if IDF_TARGET_ESP32S3
-		default 0  if IDF_TARGET_ESP32C3
+		default 35 if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+		default  0 # C3 and others
 		help
 			GPIO number (IOxx) to SPI MOSI.
 			Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to DC.
@@ -38,9 +39,8 @@ menu "ST7565 Configuration"
 		int "SCLK GPIO number"
 		range 0 GPIO_RANGE_MAX
 		default 18 if IDF_TARGET_ESP32
-		default 36 if IDF_TARGET_ESP32S2
-		default 36 if IDF_TARGET_ESP32S3
-		default 1  if IDF_TARGET_ESP32C3
+		default 36 if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+		default  1 # C3 and others
 		help
 			GPIO number (IOxx) to SPI SCLK.
 			Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to DC.
@@ -50,10 +50,9 @@ menu "ST7565 Configuration"
 	config CS_GPIO
 		int "CS GPIO number"
 		range -1 GPIO_RANGE_MAX
-		default 5  if IDF_TARGET_ESP32
-		default 34 if IDF_TARGET_ESP32S2
-		default 34 if IDF_TARGET_ESP32S3
-		default 5  if IDF_TARGET_ESP32C3
+		default  5 if IDF_TARGET_ESP32
+		default 34 if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+		default  5 # C3 and others
 		help
 			GPIO number (IOxx) to SPI CS.
 			When it is -1, CS isn't performed.
@@ -65,9 +64,8 @@ menu "ST7565 Configuration"
 		int "DC GPIO number"
 		range 0 GPIO_RANGE_MAX
 		default 27 if IDF_TARGET_ESP32
-		default 40 if IDF_TARGET_ESP32S2
-		default 40 if IDF_TARGET_ESP32S3
-		default 2  if IDF_TARGET_ESP32C3
+		default 40 if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+		default  2 # C3 and others
 		help
 			GPIO number (IOxx) to SPI DC.
 			Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to DC.
@@ -78,9 +76,8 @@ menu "ST7565 Configuration"
 		int "RESET GPIO number"
 		range 0 GPIO_RANGE_MAX
 		default 33 if IDF_TARGET_ESP32
-		default 41 if IDF_TARGET_ESP32S2
-		default 41 if IDF_TARGET_ESP32S3
-		default 3  if IDF_TARGET_ESP32C3
+		default 41 if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+		default  3 # C3 and others
 		help
 			GPIO number (IOxx) to RESET.
 			Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to Reset.
@@ -91,9 +88,8 @@ menu "ST7565 Configuration"
 		int "BACKLIGHT GPIO number"
 		range -1 GPIO_RANGE_MAX
 		default 32 if IDF_TARGET_ESP32
-		default 33 if IDF_TARGET_ESP32S2
-		default 33 if IDF_TARGET_ESP32S3
-		default 4  if IDF_TARGET_ESP32C3
+		default 33 if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+		default  4 # C3 and others
 		help
 			GPIO number (IOxx) to BACKLIGHT.
 			When it is -1, BACKLIGHT isn't performed.

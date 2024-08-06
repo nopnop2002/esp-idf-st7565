@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <inttypes.h>
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -57,7 +58,7 @@ TickType_t FillTest(TFT_t * dev, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%"PRIu32,diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -93,7 +94,7 @@ TickType_t BarTest(TFT_t * dev, int direction, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%"PRIu32,diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -150,7 +151,7 @@ TickType_t ArrowTest(TFT_t * dev, uint8_t * font, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%"PRIu32,diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -183,7 +184,7 @@ TickType_t DirectionTest(TFT_t * dev, uint8_t * font, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%"PRIu32,diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -204,7 +205,7 @@ TickType_t LineTest(TFT_t * dev, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%"PRIu32,diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -222,7 +223,7 @@ TickType_t CircleTest(TFT_t * dev, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%"PRIu32,diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -258,7 +259,7 @@ TickType_t RectAngleTest(TFT_t * dev, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%"PRIu32,diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -294,7 +295,7 @@ TickType_t TriangleTest(TFT_t * dev, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%"PRIu32,diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -314,7 +315,7 @@ TickType_t RoundRectTest(TFT_t * dev, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%"PRIu32,diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 
@@ -346,7 +347,7 @@ TickType_t BMPTest(TFT_t * dev, char * file, int width, int height) {
 	}
 	ret = fread(&result->header.filesz, 4, 1 , fp);
 	assert(ret == 1);
-	ESP_LOGD(__FUNCTION__,"result->header.filesz=%d", result->header.filesz);
+	ESP_LOGD(__FUNCTION__,"result->header.filesz=%"PRIu32, result->header.filesz);
 	ret = fread(&result->header.creator1, 2, 1, fp);
 	assert(ret == 1);
 	ret = fread(&result->header.creator2, 2, 1, fp);
@@ -378,19 +379,19 @@ TickType_t BMPTest(TFT_t * dev, char * file, int width, int height) {
 	ret = fread(&result->dib.nimpcolors, 4, 1, fp);
 	assert(ret == 1);
 
-	ESP_LOGD(__FUNCTION__, "result->dib.header_sz=%d", result->dib.header_sz);
+	ESP_LOGD(__FUNCTION__, "result->dib.header_sz=%"PRIu32, result->dib.header_sz);
 	ESP_LOGD(__FUNCTION__, "result->dib.depth=%d", result->dib.depth);
-	ESP_LOGD(__FUNCTION__, "result->dib.compress_type=%d", result->dib.compress_type);
-	ESP_LOGD(__FUNCTION__, "result->dib.width=%d", result->dib.width);
-	ESP_LOGD(__FUNCTION__, "result->dib.height=%d", result->dib.height);
-	ESP_LOGD(__FUNCTION__, "result->dib.bmp_bytesz=%d", result->dib.bmp_bytesz);
-	ESP_LOGD(__FUNCTION__, "result->dib.ncolors=%d", result->dib.ncolors);
+	ESP_LOGD(__FUNCTION__, "result->dib.compress_type=%"PRIu32, result->dib.compress_type);
+	ESP_LOGD(__FUNCTION__, "result->dib.width=%"PRIu32, result->dib.width);
+	ESP_LOGD(__FUNCTION__, "result->dib.height=%"PRIu32, result->dib.height);
+	ESP_LOGD(__FUNCTION__, "result->dib.bmp_bytesz=%"PRIu32, result->dib.bmp_bytesz);
+	ESP_LOGD(__FUNCTION__, "result->dib.ncolors=%"PRIu32, result->dib.ncolors);
 	if((result->dib.depth == 1) && (result->dib.compress_type == 0)) {
 		// BMP rows are padded (if needed) to 4-byte boundary
 		//uint32_t rowSize = (result->dib.width * 3 + 3) & ~3;
 		//uint32_t rowSize = (result->dib.width * 1 + 3) & ~3;
 		uint32_t rowSize = result->dib.bmp_bytesz/result->dib.height;
-		ESP_LOGD(__FUNCTION__,"rowSize=%d", rowSize);
+		ESP_LOGD(__FUNCTION__,"rowSize=%"PRIu32, rowSize);
 		int w = result->dib.width;
 		int h = result->dib.height;
 		ESP_LOGD(__FUNCTION__,"w=%d h=%d", w, h);
@@ -439,7 +440,7 @@ TickType_t BMPTest(TFT_t * dev, char * file, int width, int height) {
 			// (avoids a lot of cluster math in SD library).
 			// Bitmap is stored bottom-to-top order (normal BMP)
 			int pos = result->header.offset + (h - 1 - row) * rowSize;
-			ESP_LOGD(__FUNCTION__,"_result->header.offset=%d pos=%d rowSize=%d", result->header.offset, pos, rowSize);
+			ESP_LOGD(__FUNCTION__,"_result->header.offset=%"PRIu32" pos=%d rowSize=%"PRIu32, result->header.offset, pos, rowSize);
 			fseek(fp, pos, SEEK_SET);
 			int buffidx = sizeof(sdbuffer); // Force buffer reload
 
@@ -483,7 +484,7 @@ TickType_t BMPTest(TFT_t * dev, char * file, int width, int height) {
 
 	endTick = xTaskGetTickCount();
 	diffTick = endTick - startTick;
-	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%d",diffTick*portTICK_PERIOD_MS);
+	ESP_LOGI(__FUNCTION__, "elapsed time[ms]:%"PRIu32,diffTick*portTICK_PERIOD_MS);
 	return diffTick;
 }
 

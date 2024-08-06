@@ -5,9 +5,9 @@ ST7565 Driver for esp-idf
 ![st7565-19](https://user-images.githubusercontent.com/6020549/148663141-e12245a4-655c-47c5-9254-ceaaba13286c.JPG)
 
 # Software requirements
-esp-idf v4.4 or later.   
-This is because this version supports ESP32-C3.   
-
+ESP-IDF V4.4/V5.x.   
+ESP-IDF V5.0 is required when using ESP32-C2.   
+ESP-IDF V5.1 is required when using ESP32-C6.   
 
 # Hardware requirements
 
@@ -23,7 +23,7 @@ The chip resistor behind it allows you to change the interface to parallel and S
 ```
 git clone https://github.com/nopnop2002/esp-idf-st7565
 cd esp-idf-st7565/
-idf.py set-target {esp32/esp32s2/esp32s3/esp32c3}
+idf.py set-target {esp32/esp32s2/esp32s3/esp32c2/esp32c3/esp32c6}
 idf.py menuconfig
 idf.py flash
 ```
@@ -51,7 +51,7 @@ You have to set this config value with menuconfig.
 
 # Wireing  
 
-|ST7565||ESP32|ESP32S2/S3|ESP32C3|
+|ST7565||ESP32|ESP32S2/S3|ESP32C2/C3/C6|
 |:-:|:-:|:-:|:-:|:-:|
 |DB0|--|N/C|N/C|N/C|
 |DB1|--|N/C|N/C|N/C|
