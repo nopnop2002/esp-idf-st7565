@@ -51,24 +51,24 @@ You have to set this config value with menuconfig.
 
 # Wireing  
 
-|ST7565||ESP32|ESP32S2/S3|ESP32C2/C3/C6|
-|:-:|:-:|:-:|:-:|:-:|
-|DB0|--|N/C|N/C|N/C|
-|DB1|--|N/C|N/C|N/C|
-|DB2|--|N/C|N/C|N/C|
-|DB3|--|N/C|N/C|N/C|
-|DB4|--|N/C|N/C|N/C|
-|DB5|--|N/C|N/C|N/C|
-|DB6(=SCLK)|--|GPIO18(*)|GPIO36(*)|GPIO1(*)|
-|DB7(=MOSI)|--|GPIO23(*)|GPIO35(*)|GPIO0(*)|
-|VDD|--|3.3V|3.3V|3.3V|
-|VSS|--|GND|GND|GND|
-|LEDA|--|GPIO32(*)|GPIO33(*)|GPIO4(*)|
-|/CS|--|GPIO5(*)|GPIO34(*)|GPIO5(*)|
-|/RES|--|GPIO33(*)|GPIO41(*)|GPIO3(*)|
-|A0|--|GPIO27(*)|GPIO40(*)|GPIO2(*)|
-|/WR|--|N/C|N/C|N/C|
-|/RD|--|N/C|N/C|N/C|
+|ST7565|Pin#||ESP32|ESP32S2/S3|ESP32C2/C3/C6|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|DB0|1|--|N/C|N/C|N/C|
+|DB1|2|--|N/C|N/C|N/C|
+|DB2|3|--|N/C|N/C|N/C|
+|DB3|4|--|N/C|N/C|N/C|
+|DB4|5|--|N/C|N/C|N/C|
+|DB5|6|--|N/C|N/C|N/C|
+|DB6(=SCLK)|7|--|GPIO18(*)|GPIO36(*)|GPIO1(*)|
+|DB7(=MOSI)|8|--|GPIO23(*)|GPIO35(*)|GPIO0(*)|
+|VDD|9|--|3.3V|3.3V|3.3V|
+|VSS|10|--|GND|GND|GND|
+|LEDA|11|--|GPIO32(*)|GPIO33(*)|GPIO4(*)|
+|/CS|12|--|GPIO5(*)|GPIO34(*)|GPIO5(*)|
+|/RES|13|--|GPIO33(*)|GPIO41(*)|GPIO3(*)|
+|A0|14|--|GPIO27(*)|GPIO40(*)|GPIO2(*)|
+|/WR|15|--|N/C|N/C|N/C|
+|/RD|16|--|N/C|N/C|N/C|
 
 For SPI interfaces, DB6 is the SPI CLOCK.   
 For SPI interfaces, DB7 is the SPI MOSI.   
