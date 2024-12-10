@@ -51,7 +51,7 @@ You have to set this config value with menuconfig.
 
 # Wireing  
 
-|Pin#|ST7565||ESP32|ESP32S2/S3|ESP32C2/C3/C6|
+|#|ST7565||ESP32|ESP32S2/S3|ESP32C2/C3/C6|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |1|DB0|--|N/C|N/C|N/C|
 |2|DB1|--|N/C|N/C|N/C|
