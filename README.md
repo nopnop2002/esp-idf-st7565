@@ -5,9 +5,8 @@ ST7565 Driver for esp-idf
 ![st7565-19](https://user-images.githubusercontent.com/6020549/148663141-e12245a4-655c-47c5-9254-ceaaba13286c.JPG)
 
 # Software requirements
-ESP-IDF V4.4/V5.x.   
-ESP-IDF V5.0 is required when using ESP32-C2.   
-ESP-IDF V5.1 is required when using ESP32-C6.   
+ESP-IDF V5.0 or later.   
+ESP-IDF V4.4 release branch reached EOL in July 2024.   
 
 # Hardware requirements
 
@@ -51,24 +50,24 @@ You have to set this config value with menuconfig.
 
 # Wireing  
 
-|#|ST7565||ESP32|ESP32S2/S3|ESP32C2/C3/C6|
-|:-:|:-:|:-:|:-:|:-:|:-:|
-|1|DB0|--|N/C|N/C|N/C|
-|2|DB1|--|N/C|N/C|N/C|
-|3|DB2|--|N/C|N/C|N/C|
-|4|DB3|--|N/C|N/C|N/C|
-|5|DB4|--|N/C|N/C|N/C|
-|6|DB5|--|N/C|N/C|N/C|
-|7|DB6(=SCLK)|--|GPIO18(*)|GPIO36(*)|GPIO1(*)|
-|8|DB7(=MOSI)|--|GPIO23(*)|GPIO35(*)|GPIO0(*)|
-|9|VDD|--|3.3V|3.3V|3.3V|
-|10|VSS|--|GND|GND|GND|
-|11|LEDA|--|GPIO32(*)|GPIO33(*)|GPIO4(*)|
-|12|/CS|--|GPIO5(*)|GPIO34(*)|GPIO5(*)|
-|13|/RES|--|GPIO33(*)|GPIO41(*)|GPIO3(*)|
-|14|A0|--|GPIO27(*)|GPIO40(*)|GPIO2(*)|
-|15|/WR|--|N/C|N/C|N/C|
-|16|/RD|--|N/C|N/C|N/C|
+|#|ST7565||ESP32|ESP32S2/S3|ESP32C2/C3/C6||
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|1|DB0|--|N/C|N/C|N/C||
+|2|DB1|--|N/C|N/C|N/C||
+|3|DB2|--|N/C|N/C|N/C||
+|4|DB3|--|N/C|N/C|N/C||
+|5|DB4|--|N/C|N/C|N/C||
+|6|DB5|--|N/C|N/C|N/C||
+|7|DB6(=SCLK)|--|GPIO18|GPIO36|GPIO1|(*)|
+|8|DB7(=MOSI)|--|GPIO23|GPIO35|GPIO0|(*)|
+|9|VDD|--|3.3V|3.3V|3.3V||
+|10|VSS|--|GND|GND|GND||
+|11|LEDA|--|GPIO32|GPIO33|GPIO4|(*)|
+|12|/CS|--|GPIO5|GPIO34|GPIO5|(*)|
+|13|/RES|--|GPIO33|GPIO41|GPIO3|(*)|
+|14|A0|--|GPIO27|GPIO40|GPIO2|(*)|
+|15|/WR|--|N/C|N/C|N/C||
+|16|/RD|--|N/C|N/C|N/C||
 
 For SPI interfaces, DB6 is the SPI CLOCK.   
 For SPI interfaces, DB7 is the SPI MOSI.   
